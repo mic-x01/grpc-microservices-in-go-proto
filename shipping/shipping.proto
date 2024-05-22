@@ -2,7 +2,7 @@ syntax = "proto3";
 
 option go_package = "github.com/mic-x01/grpc-microservices-in-go-proto/shipping";
 
-message CreateShippingRequest {}
+message CreateShippingRequest { string address = 1; }
 
 message CreateShippingResponse {}
 

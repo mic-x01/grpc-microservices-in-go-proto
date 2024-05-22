@@ -2,9 +2,16 @@ syntax = "proto3";
 
 option go_package = "github.com/mic-x01/grpc-microservices-in-go-proto/payment";
 
-message CreatePaymentRequest { int64 user_id = 1; }
+message CreatePaymentRequest {
+  int64 user_id = 1;
+  float amount = 2;
+}
 
-message CreatePaymentResponse { int64 payment_id = 1; }
+message CreatePaymentResponse {
+  int64 payment_id = 1;
+  int64 bill_id = 2;
+  int64 bill_idd = 3;
+}
 
 service Payment {
   rpc Create(CreatePaymentRequest) returns (CreatePaymentResponse) {}
